@@ -6,4 +6,5 @@
     <dimen name="default_margin">16dp</dimen>
     <dimen name="normal_txt">16sp</dimen>
     <dimen name="ultra_large_txt">32sp</dimen>
+    <dimen name="clearance">24dp</dimen>
 </resources>
