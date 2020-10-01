@@ -38,7 +38,8 @@ class RemoteDataSource {
     }
 
     fun forecast(city: String): Observable<ResponseBody>? {
-        return servicesApiInterface?.getForecast(city, Constants.API_KEY)
+        return servicesApiInterface?.getForecast(city, Constants.API_KEY,"metric","7")
     }
+
 
 }

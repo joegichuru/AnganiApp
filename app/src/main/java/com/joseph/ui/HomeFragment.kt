@@ -1,6 +1,7 @@
 package com.joseph.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.joseph.MainActivity
 import com.joseph.R
 import com.joseph.data.local.Weather
 import com.joseph.databinding.FragmentHomeBinding
@@ -38,6 +42,11 @@ class HomeFragment : Fragment() {
             homeBinding.rain.text = "${it.humidity}"
             homeBinding.sun.text = "${it.cloud}"
         })
+        homeBinding.searchCity.setOnClickListener {
+            var navController: NavController =
+                Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.search_fragment)
+        }
         return homeBinding.root
     }
 

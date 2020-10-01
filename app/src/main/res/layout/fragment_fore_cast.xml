@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_margin"
         android:fontFamily="@font/roboto_light"
-        android:text="36"
+        android:text="__"
         android:textColor="@color/white"
         android:textSize="@dimen/ultra_large_txt"
         app:layout_constraintBottom_toTopOf="@id/city"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_margin"
         android:fontFamily="@font/roboto_light"
-        android:text="Nairobi Kenya"
+        android:text="__"
         android:textColor="@color/white"
         android:textSize="@dimen/normal_txt"
         app:layout_constraintBottom_toTopOf="@id/condition"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/top_margin"
         android:fontFamily="@font/roboto_light"
-        android:text="Sunny"
+        android:text="__"
         android:textColor="@color/white"
         android:textSize="@dimen/normal_txt"
         app:layout_constraintBottom_toBottomOf="@id/forecast_image"
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="24"
+                android:text="Forecast"
                 android:textSize="@dimen/normal_txt" />
 
             <ImageView
@@ -113,7 +113,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="3-4"
+                android:text="__"
+                android:id="@+id/rain"
                 android:textSize="@dimen/normal_txt" />
         </LinearLayout>
 
@@ -128,19 +129,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="24"
+                android:text="Wind"
                 android:textSize="@dimen/normal_txt" />
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/sun_color" />
+                android:src="@drawable/wind_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/wind"
                 android:fontFamily="@font/roboto_light"
-                android:text="3-4"
+                android:text="__"
                 android:textSize="@dimen/normal_txt" />
         </LinearLayout>
 
@@ -155,19 +157,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="24"
+                android:text="Temp"
                 android:textSize="@dimen/normal_txt" />
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/sun_color" />
+                android:src="@drawable/temperature" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="3-4"
+                android:text="__"
+                android:id="@+id/temperature_d"
                 android:textSize="@dimen/normal_txt" />
         </LinearLayout>
 
@@ -182,19 +185,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="24"
+                android:text="Humidity"
                 android:textSize="@dimen/normal_txt" />
 
             <ImageView
-                android:layout_width="50dp"
+                android:layout_width="44dp"
                 android:layout_height="50dp"
-                android:src="@drawable/sun_color" />
+                android:src="@drawable/drop_color" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
-                android:text="3-4"
+                android:text="__"
+                android:id="@+id/humidity"
                 android:textSize="@dimen/normal_txt" />
         </LinearLayout>
 
