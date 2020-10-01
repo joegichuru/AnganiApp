@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(version = 1, entities = [Weather::class, City::class],exportSchema = false)
+@Database(version = 2, entities = [Weather::class, City::class], exportSchema = false)
 abstract class LocalDataSource : RoomDatabase() {
     abstract fun getWeatherDao(): WeatherDao
 
@@ -27,7 +27,7 @@ abstract class LocalDataSource : RoomDatabase() {
                     context.applicationContext,
                     LocalDataSource::class.java,
                     "angani"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
             }

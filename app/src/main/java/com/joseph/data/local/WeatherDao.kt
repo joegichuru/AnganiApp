@@ -1,10 +1,7 @@
 package com.joseph.data.local
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.joseph.data.domain.WeatherResponse
 import io.reactivex.Completable
 import io.reactivex.Flowable
@@ -17,7 +14,7 @@ interface WeatherDao {
     @Query("SELECT * FROM weather where city=:city")
     fun findByCity(city: String): Single<Weather>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(weather: Weather):Unit
 
     @Delete

@@ -13,8 +13,9 @@ data class Weather(
     val cloud: Int,
     val forecast: String,
     val description: String="",
-    val city: String,
+    var city: String,
     val date: Long,
     val pressure: Double,
-    val humidity: Int
+    val humidity: Int,
+    val icon:String
 )

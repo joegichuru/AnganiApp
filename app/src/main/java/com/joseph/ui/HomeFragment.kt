@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.joseph.R
 import com.joseph.data.local.Weather
 import com.joseph.databinding.FragmentHomeBinding
+import com.squareup.picasso.Picasso
 
 class HomeFragment : Fragment() {
     private lateinit var weatherViewModel: WeatherViewModel
@@ -32,7 +33,10 @@ class HomeFragment : Fragment() {
             homeBinding.longDesc.text = it.description
             homeBinding.temperature.text = "${it.temperature}\u00B0"
             homeBinding.wind.text = "${it.wind} m/s"
-            homeBinding.forecastToday.setImageDrawable(resources.getDrawable(getIcon(it.forecast)))
+            Picasso.get().load("http://openweathermap.org/img/wn/${it.icon}@2x.png")
+                .into(homeBinding.forecastToday)
+            homeBinding.rain.text = "${it.humidity}"
+            homeBinding.sun.text = "${it.cloud}"
         })
         return homeBinding.root
     }

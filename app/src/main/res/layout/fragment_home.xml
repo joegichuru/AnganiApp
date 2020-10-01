@@ -13,7 +13,6 @@
         android:background="@color/colorPrimary" />
     <ImageView
         android:layout_width="100dp"
-        android:alpha=".2"
         android:id="@+id/forecast_today"
         app:layout_constraintTop_toTopOf="@id/forecast_image"
         app:layout_constraintBottom_toBottomOf="@id/forecast_image"

@@ -11,10 +11,12 @@ import com.joseph.R
 import com.joseph.data.local.Forecast
 import com.joseph.data.local.Weather
 import com.joseph.databinding.FragmentForeCastBinding
+import com.squareup.picasso.Picasso
 
 class ForeCastFragment : Fragment() {
     lateinit var binding: FragmentForeCastBinding
     lateinit var forecastViewModel: ForecastViewModel
+    lateinit var weatherViewModel:WeatherViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -26,7 +28,16 @@ class ForeCastFragment : Fragment() {
         binding = FragmentForeCastBinding.inflate(inflater, container, false)
         forecastViewModel = ViewModelProvider(this).get(ForecastViewModel::class.java)
         forecastViewModel.getForecast().observe(viewLifecycleOwner, Observer<Forecast> {
-           binding.temperature.text="${it.current.temperature}\u00B0"
+
+        })
+        weatherViewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
+        weatherViewModel.getWeather.observe(viewLifecycleOwner, Observer<Weather> {
+            binding.city.text = it.city
+            binding.condition.text = it.forecast
+            binding.temperature.text = "${it.temperature}\u00B0"
+            Picasso.get().load("http://openweathermap.org/img/wn/${it.icon}@2x.png")
+                .into(binding.forecastToday)
+
         })
         return binding.root
 

@@ -8,7 +8,7 @@ class WeatherResponse(
     val dt: Long, val name: String, val clouds: Clouds, val wind: Wind
 ) : Serializable
 
-data class WeatherInternal(val id: Long, val main: String, val description: String) : Serializable
+data class WeatherInternal(val id: Long, val main: String, val description: String,val icon:String) : Serializable
 
 data class Main(
     val temp: Double, val feelsLike: Double, val tempMin: Double, val tempMax: Double,

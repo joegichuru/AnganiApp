@@ -89,7 +89,8 @@ class WeatherRepository constructor(
             description = weatherResponse.weather[0].description,
             forecast = weatherResponse.weather[0].main,
             humidity = weatherResponse.main.humidity,
-            pressure = weatherResponse.main.pressure
+            pressure = weatherResponse.main.pressure,
+            icon = weatherResponse.weather[0].icon
         )
     }
 }
