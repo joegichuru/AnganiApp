@@ -1,11 +1,20 @@
 package com.joseph.data.local
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.*
 
 @Entity(tableName = "weather")
 data class Weather(
-    val id: Long, val wind: Int, val temperature: Int,
-    val precipitation: String, val forecast: String,
-    val description: String,val city: City,val date: Date
+    @PrimaryKey
+    val id: Long,
+    val wind: Double,
+    val temperature: Double,
+    val cloud: Int,
+    val forecast: String,
+    val description: String="",
+    val city: String,
+    val date: Long,
+    val pressure: Double,
+    val humidity: Int
 )

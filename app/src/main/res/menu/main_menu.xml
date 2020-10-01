@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home"
+        app:showAsAction="always"
+        android:icon="@drawable/sunshine"
         android:title="@string/weather" />
     <item
         android:id="@+id/forecast"
+        app:showAsAction="always"
+        android:icon="@drawable/forecast"
         android:title="@string/forecast" />
     <item
         android:id="@+id/setting"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_setting"
         android:title="@string/setting" />
+    <item
+        android:id="@+id/help"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_help"
+        android:title="@string/help" />
 </menu>
